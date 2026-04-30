@@ -9,6 +9,8 @@ param adminUsername string = 'azureuser'
 param adminPassword string
 
 resource vmss 'Microsoft.Compute/virtualMachineScaleSets@2024-03-01' = {
+  zones: ['1', '2', '3']
+
   name: vmssName
   location: location
   sku: {
